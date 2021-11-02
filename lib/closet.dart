@@ -10,20 +10,20 @@ class Article {
 }
 
 class Brands {
-  var acne_studios = 'Acne Studios';
+  var acneStudios = 'Acne Studios';
   var amiri = 'Amiri';
   var balenciaga = 'Balenciaga';
   var burberry = 'Burberry';
   var dime = 'Dime';
-  var heron_preston = 'Heron Preston';
-  var john_elliot = 'John Elliot';
-  var maison_margiela = 'Maison Margiela';
-  var our_legacy = 'Our Legacy';
+  var heronPreston = 'Heron Preston';
+  var johnElliot = 'John Elliot';
+  var maisonMargiela = 'Maison Margiela';
+  var ourLegacy = 'Our Legacy';
   var pleasures = 'PLEASURES';
-  var saint_laurent = 'Saint Laurent';
+  var saintLaurent = 'Saint Laurent';
 }
 
-class Colors {
+class MyColors {
   var red = 'Red';
   var orange = 'Orange';
   var yellow = 'Yellow';
@@ -155,15 +155,20 @@ List<Article> shoes = [
 var closet = [tops, bottoms, shoes];
 // +++++++++++++++++++++++++++++
 
-void randomize(int seed, var closet) {
+List<Article> randomize(int seed, var closet) {
   var rng = Random(seed);
+  List<Article> result = [];
 
   for (var types = 0; types < closet.length; types++) {
     var chosenIndex = rng.nextInt(closet[types].length);
     var chosenArticle = closet[types][chosenIndex];
 
-    print('${types + 1} - ${chosenArticle.brand}, ${chosenArticle.color} ${chosenArticle.type}');
+    //print('${types + 1} - ${chosenArticle.brand}, ${chosenArticle.color} ${chosenArticle.type}');
+
+    result.add(chosenArticle);
   }
+
+  return result;
 }
 
 

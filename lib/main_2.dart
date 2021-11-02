@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'wardrobe_screen.dart';
-import 'add_screen.dart';
+//import 'add_screen.dart';
 
 void main() {
   runApp(MyApp());

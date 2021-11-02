@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'wardrobe_screen.dart';
-import 'add_screen.dart';
+//import 'wardrobe_screen.dart';
+//import 'add_screen.dart';
+import 'closet.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +31,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var randomizeSeed = 0;
+    var randomResults = randomize(randomizeSeed, closet);
+    // check why shoes dont show up with randomize(25, closet);
+    //print('${randomResults[0].url}');
+
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.filter_list_rounded),
@@ -51,12 +57,39 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 Expanded(
                   flex: 80,
-                  child: Column(
-                    children: [
-                    Text('image 1'),
-                    Text('image 2'),
-                    Text('image 3'),
-                  ])
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          flex: 33,
+                          child:
+                            Center(
+                              child: 
+                              //Text('${randomResults[0].brand}'),
+                              Image.network('${randomResults[0].url}'),
+                              ),
+                            ),
+                        Expanded(
+                          flex: 33,
+                          child:
+                            Center(
+                              child: 
+                              //Text('${randomResults[1].brand}'),
+                              Image.network('${randomResults[1].url}'),
+                              ),
+                            ),
+                        Expanded(
+                          flex: 33,
+                          child:
+                            Center(
+                              child: 
+                              //Text('${randomResults[2].brand}'),
+                              Image.network('${randomResults[2].url}'),
+                              ),
+                              ),
+                    ]),
+                  )
                 ),
                 Expanded(
                   flex: 10,
