@@ -143,7 +143,7 @@ List<Article> shoes = [
   Article('https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/1/9/19-03-2021_AJ_S57-WS0236-P1895-101_1_1.jpg', 'White', 'Maison Margiela', 'Shoes'),
   Article('https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/0/1/01-04-2021_TC_S57WS0399-P4080-H8650_1_1.jpg', 'Black', 'Maison Margiela', 'Shoes'),
   Article('https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/2/5/25-10-2021_LL_MFS003-LPN-124_m1_1.jpg', 'Red', 'Amiri', 'Sneaker'),
-  Article('https://www.endclothing.com/us/balenciaga-speed-runner-lt-645056-w2dbq-1015.html', 'Black', 'Balenciaga', 'Shoe'),
+  Article('https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/3/0/30-03-2021_jb_645056-w2dbq-1015_1.jpg', 'Black', 'Balenciaga', 'Shoe'),
   Article('https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/0/4/04-11-2020_mox_p1-k111-1_1.jpg', 'Black', 'Comme Des Garcon', 'Sneaker'),
   Article('https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/2/0/20-07-2021_JB_P1-K121-2_m1_1.jpg', 'Blue', 'Comme Des Garcon', 'Sneaker'),
   Article('https://media.endclothing.com/media/f_auto,q_auto:eco/prodmedia/media/catalog/product/1/7/17-02-2021_JA_625783-1XG70-9102_1_1.jpg', 'White', 'Gucci', 'Sneaker'),

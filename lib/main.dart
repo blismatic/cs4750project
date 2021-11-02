@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.grey),
+      theme: ThemeData(
+        primarySwatch: Colors.grey,
+        canvasColor: Colors.white,
+        ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -31,10 +34,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var randomizeSeed = 0;
+    var randomizeSeed = 25;
     var randomResults = randomize(randomizeSeed, closet);
-    // check why shoes dont show up with randomize(25, closet);
-    //print('${randomResults[0].url}');
 
     return Scaffold(
       appBar: AppBar(
