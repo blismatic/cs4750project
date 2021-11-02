@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
         canvasColor: Colors.white,
-        ),
+      ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -32,10 +32,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int randomSeed = 0;
+  int selectedIndex = 1;
+
+  void updateSeedRight() {
+    setState(() {
+      randomSeed += 1;
+      print('randomSeed: $randomSeed');
+    });
+  }
+
+  void updateSeedLeft() {
+    setState(() {
+      randomSeed += -1;
+      print('randomSeed: $randomSeed');
+    });
+  }
+
+  void onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    var randomizeSeed = 145;
-    var randomResults = randomize(randomizeSeed, closet);
+    var randomResults = randomize(randomSeed, closet);
     print('${randomResults[0].brand} ${randomResults[0].type}');
     print('${randomResults[1].brand} ${randomResults[1].type}');
     print('${randomResults[2].brand} ${randomResults[2].type}');
@@ -55,64 +77,63 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               flex: 90,
               child:
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Expanded(
                   flex: 10,
-                  child: Icon(Icons.arrow_back)
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    onPressed: updateSeedLeft,
                   ),
-                Expanded(
-                  flex: 80,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: [
-                        Expanded(
-                          flex: 33,
-                          child:
-                            Center(
-                              child: 
-                              //Text('${randomResults[0].brand}'),
-                              Image.network('${randomResults[0].url}'),
-                              ),
-                            ),
-                        Expanded(
-                          flex: 33,
-                          child:
-                            Center(
-                              child: 
-                              //Text('${randomResults[1].brand}'),
-                              Image.network('${randomResults[1].url}'),
-                              ),
-                            ),
-                        Expanded(
-                          flex: 33,
-                          child:
-                            Center(
-                              child: 
-                              //Text('${randomResults[2].brand}'),
-                              Image.network('${randomResults[2].url}'),
-                              ),
-                              ),
-                    ]),
-                  )
                 ),
                 Expanded(
+                    flex: 80,
+                    child: Padding(
+                      padding: const EdgeInsets.all(35.0),
+                      child: Column(children: [
+                        Expanded(
+                          flex: 33,
+                          child: Center(
+                            child: Image.network('${randomResults[0].url}'),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 33,
+                          child: Center(
+                            child: Image.network('${randomResults[1].url}'),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 33,
+                          child: Center(
+                            child: Image.network('${randomResults[2].url}'),
+                          ),
+                        ),
+                      ]),
+                    )),
+                Expanded(
                   flex: 10,
-                  child: Icon(Icons.arrow_forward),
+                  child: IconButton(
+                    icon: Icon(Icons.arrow_forward),
+                    onPressed: updateSeedRight,
+                  ),
                 )
-              ]),
-            ),
-            Expanded(
-              flex: 10,
-              child:
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Expanded(child: Icon(Icons.meeting_room)),
-                Expanded(child: Icon(Icons.person)),
-                Expanded(child: Icon(Icons.add)),
               ]),
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.healing_rounded), label: 'Left'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Middle'),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Right'),
+        ],
+        currentIndex: selectedIndex,
+        selectedItemColor: Colors.red[800],
+        onTap: onItemTapped,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
       ),
     );
   }
