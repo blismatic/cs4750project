@@ -34,8 +34,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var randomizeSeed = 25;
+    var randomizeSeed = 145;
     var randomResults = randomize(randomizeSeed, closet);
+    print('${randomResults[0].brand} ${randomResults[0].type}');
+    print('${randomResults[1].brand} ${randomResults[1].type}');
+    print('${randomResults[2].brand} ${randomResults[2].type}');
+    print('---------------++---------------');
 
     return Scaffold(
       appBar: AppBar(
