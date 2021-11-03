@@ -35,17 +35,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int randomSeed = 0;
   int selectedIndex = 1;
 
-  void updateSeedRight() {
+  void updateSeed(int offset) {
     setState(() {
-      randomSeed += 1;
-      print('randomSeed: $randomSeed');
-    });
-  }
-
-  void updateSeedLeft() {
-    setState(() {
-      randomSeed += -1;
-      print('randomSeed: $randomSeed');
+      randomSeed += offset;
     });
   }
 
@@ -82,7 +74,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   flex: 10,
                   child: IconButton(
                     icon: Icon(Icons.arrow_back),
-                    onPressed: updateSeedLeft,
+                    //onPressed: updateSeedLeft,
+                    onPressed: () => updateSeed(-1),
                   ),
                 ),
                 Expanded(
@@ -114,7 +107,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   flex: 10,
                   child: IconButton(
                     icon: Icon(Icons.arrow_forward),
-                    onPressed: updateSeedRight,
+                    //onPressed: updateSeedRight,
+                    onPressed: () => updateSeed(1),
                   ),
                 )
               ]),
