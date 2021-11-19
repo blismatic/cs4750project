@@ -12,7 +12,7 @@ Randomize your closet and get inspiration from clothing combinations you never w
 [View the landing page here](https://closetcatalog.github.io/)
 
 ### To add, remove, or edit the available clothing
-Navigate to (lib/closet.dart)[lib/closet.dart] and add an `Article` object to one of the Lists.
+Navigate to [lib/closet.dart](lib/closet.dart) and add an `Article` object to one of the Lists.
 
 #### This project was built using Flutter, an open-source UI software development kit created by Google.
 For help getting started with Flutter, view the
