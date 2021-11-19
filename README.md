@@ -1,16 +1,20 @@
-# cs4750project
+# Closet Catalog
 
-A new Flutter project.
+Randomize your closet and get inspiration from clothing combinations you never would have thought of.
+- Find new and interesting outfit combinations from your closet.
+- Curate what you see and how you see it, with filters such as color and brand.
+- Save your favorite outfit combinations and share them with your friends.
 
-## Getting Started
+## Available on the Google Play Store
 
-This project is a starting point for a Flutter application.
+[Click here to download it today!](https://play.google.com/store/apps/details?id=com.sethcollins.cs4750closetcatalog)
 
-A few resources to get you started if this is your first Flutter project:
+[View the landing page here](https://closetcatalog.github.io/)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### To add, remove, or edit the available clothing
+Navigate to (lib/closet.dart)[lib/closet.dart] and add an `Article` object to one of the Lists.
 
-For help getting started with Flutter, view our
+#### This project was built using Flutter, an open-source UI software development kit created by Google.
+For help getting started with Flutter, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
